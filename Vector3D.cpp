@@ -183,21 +183,21 @@ std::istream &operator>>(std::istream &input, Vector3D &vector3D) {
 
 
 int main() {
-    double arr[3];
-    arr[0] = 4;
-    arr[1] = 5;
-    arr[2] = 6;
-    Vector3D v1;
-    Vector3D v2(2,3,4);
-    Vector3D v3(arr);
-    Vector3D v4 = v3;
-    Vector3D v5 = v2;
-    std::cout << "Enter vector values: \n";
-    std::cin >> v1;
-    std::cout<< "v1: " << v1 <<std::endl;
-    std::cout<< "v2: " << v2 <<std::endl;
-    std::cout<< "v3: " << v3 <<std::endl;
-    std::cout<< "v4: " << v4 <<std::endl;
-    std::cout<< "v5: " << v5 <<std::endl;
+//    double arr[3];
+//    arr[0] = 4;
+//    arr[1] = 5;
+//    arr[2] = 6;
+//    Vector3D v1;
+//    Vector3D v2(2,3,4);
+//    Vector3D v3(arr);
+//    Vector3D v4 = v3;
+//    Vector3D v5 = v2;
+//    std::cout << "Enter vector values: \n";
+//    std::cin >> v1;
+//    std::cout<< "v1: " << v1 <<std::endl;
+//    std::cout<< "v2: " << v2 <<std::endl;
+//    std::cout<< "v3: " << v3 <<std::endl;
+//    std::cout<< "v4: " << v4 <<std::endl;
+//    std::cout<< "v5: " << v5 <<std::endl;
     return 0;
 }

@@ -18,6 +18,7 @@ class Vector3D {
     double norm() const;
     double distance(const Vector3D &vector3D) const;
     const double * getElements() const;
+
     operator std::string() const;
     friend Vector3D operator+(const Vector3D& vector13D, const Vector3D& vector23D);
     friend Vector3D operator-(const Vector3D& vector13D, const Vector3D& vector23D);
