@@ -21,12 +21,12 @@ class Matrix3D {
     Matrix3D(double **matrixNumbers);
     Matrix3D(Vector3D vector1, Vector3D vector2, Vector3D vector3);
     Matrix3D(const Matrix3D &matrix3D);
-    const Vector3D* getElements() const ;
+    Vector3D *const* getElements() const;
 
 
     friend Matrix3D operator+(const Matrix3D& matrix3D, const Matrix3D& matrix3D1);
     friend Matrix3D operator-(const Matrix3D& matrix3D, const Matrix3D& matrix3D1);
-    friend Matrix3D operator*(const Matrix3D& matrix3D, Vector3D vector3D);
+    friend Vector3D operator*(const Matrix3D& matrix3D, Vector3D vector3D);
 
     friend std::istream& operator>>(std::istream& input, Matrix3D &matrix3D);
     friend std::ostream& operator<<(std::ostream& os, Matrix3D matrix3D);
@@ -42,12 +42,12 @@ class Matrix3D {
     Vector3D operator[]( int index) const;
 
     Vector3D row(short index);
-    Vector3D column(short index);
+    Vector3D column(short index) const;
     double trace();
     double determinant();
 
     private:
-        Vector3D elements[MATRIX_ELEM_NUM];
+        Vector3D* elements[MATRIX_ELEM_NUM];
 };
 
 
