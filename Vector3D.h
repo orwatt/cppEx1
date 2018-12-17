@@ -5,6 +5,9 @@
 #ifndef CPPTEST_VECTOR3D_H
 #define CPPTEST_VECTOR3D_H
 #define VECTOR_ELEM_NUM 3
+#include <iostream>
+#include "Vector3D.h"
+#include <math.h>
 
 class Vector3D {
     private:
@@ -16,10 +19,9 @@ class Vector3D {
     Vector3D(double data[VECTOR_ELEM_NUM]);
     Vector3D(const Vector3D &vector3d);
     double norm() const;
-    double distance(const Vector3D &vector3D) const;
+    double dist(const Vector3D &vector3D) const;
     const double * getElements() const;
 
-    operator std::string() const;
     friend Vector3D operator+(const Vector3D& vector13D, const Vector3D& vector23D);
     friend Vector3D operator-(const Vector3D& vector13D, const Vector3D& vector23D);
     friend Vector3D operator-(const Vector3D& vector13D);

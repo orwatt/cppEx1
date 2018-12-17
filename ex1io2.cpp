@@ -7,6 +7,7 @@ int main()
   Matrix3D m;
   while(std::cin >> m)
     {
+	m =* m
       std::cout << m*m;
     }
 

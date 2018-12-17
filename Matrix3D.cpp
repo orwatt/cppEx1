@@ -59,8 +59,8 @@ Matrix3D operator-(const Matrix3D &matrix3D, const Matrix3D &matrix3D1) {
 }
 
 Vector3D operator*(const Matrix3D &matrix3D, Vector3D vector3D) {
-    return Vector3D(matrix3D.column(0) * vector3D, matrix3D.column(1) * vector3D,
-            matrix3D.column(2) * vector3D);
+    return Vector3D(matrix3D[0] * vector3D, matrix3D[1] * vector3D,
+            matrix3D[2] * vector3D);
 }
 
 Matrix3D &Matrix3D::operator=(const Matrix3D &matrix3D) {
@@ -167,37 +167,3 @@ double Matrix3D::determinant() {
 
 
 
-int main(){
-    double list[] = {11,22,33,44,55,66,77,88,99};
-
-    Matrix3D m1 = Matrix3D();
-    Matrix3D m2 = Matrix3D(1.5);
-    Matrix3D m3 = Matrix3D(1,2,3,4,5,6,7,8,9);
-    Matrix3D m4 = Matrix3D(list);
-    Matrix3D m5 = Matrix3D(m4);
-    Vector3D v1 = Vector3D(10,11,12);
-    Vector3D v2 = Vector3D(30,31,32);
-    Vector3D v3 = Vector3D(20,21,22);
-    Matrix3D m6 = Matrix3D(v1, v2, v3);
-    m6 -= m2;
-    m3 /= 0.5;
-    m4 *= m3;
-    std::cout <<"Matrix m1=\n"<< m1 << "\n\n";
-    std::cout <<"Matrix m2=\n"<< m2 << "\n\n";
-    std::cout <<"Matrix m3=\n"<< m3 << "\n\n";
-    std::cout <<"Matrix m4=\n"<< m4 << "\n\n";
-    std::cout <<"Matrix m5=\n"<< m5 << "\n\n";
-    std::cout <<"Matrix m6=\n"<< m6 << "\n\n";
-
-    std::cout << "Testing (+) m2 + m3 = \n " << m2 + m3 <<std::endl;
-    std::cout << "Testing (-) m5 - m4 = \n " << m5 - m3 <<std::endl;
-    std::cout << "Testing (*) m3 * v3 = \n " << m6*v3<<std::endl;
-    std::cout << "Testing (col) m2 = \n " << m2.column(1) <<std::endl;
-    std::cout << "Testing (row) m4 = \n " << m4.row(2) <<std::endl;
-
-    std::cout << "Testing (trace) m5 = \n " << m5.trace() <<std::endl;
-
-    std::cout << "Testing (det) m2 = \n " << m2.determinant() <<std::endl;
-
-
-}

@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include <vector>
+#include <numeric>
 int main() {
 
   Vector3D a(3.0, 2.0, 5.0);
@@ -15,5 +17,13 @@ int main() {
   std::cout << "Matrix m = \n" << m << std::endl;
   std::cout << "m.determinant = " << m.determinant() << std::endl;
   std::cout << "m*a = " << m*a << std::endl;
+
+  Matrix3D m1;
+  while(std::cin >> m1)
+    {
+	m1 *= m1;
+      std::cout << m1;
+    }
+
   return 0;
 }
